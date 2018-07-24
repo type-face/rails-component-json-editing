@@ -11,6 +11,6 @@ class AuthController < ApplicationController
   private
 
   def only_for_anonymous
-    # redirect_to root_path if session[:username]
+    redirect_to root_path if session[:username]
   end
 end
