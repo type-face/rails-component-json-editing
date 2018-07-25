@@ -1,0 +1,46 @@
+<%= form_with(model: lottery, local: true) do |f| %>
+  <% if lottery.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(lottery.errors.count, "error") %> prohibited this lottery from being saved:</h2>
+
+      <ul>
+      <% lottery.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>        
+  </div>
+  <%= f.fields_for :contests do |contests_form| %>
+    <h3>
+      Contest
+    </h3>
+    <div>
+      <%= contests_form.label :name %>
+      <%= contests_form.text_field :name %>
+    </div>
+    <%= contests_form.fields_for :prizes do |prizes_fields| %>
+      <h4>Prizes</h4>
+      <div>
+        <%= prizes_fields.label :name %>
+        <%= prizes_fields.text_field :name %>
+      </div>
+      <div>
+        <%= label_tag "lottery[contests_attributes][#{contests_form.index}][prizes_attributes][#{prizes_fields.index}][meta_data][test1]", 'Test1' %>
+        <%= text_field_tag "lottery[contests_attributes][#{contests_form.index}][prizes_attributes][#{prizes_fields.index}][meta_data][test1]", prizes_fields.object.meta_data['test1'] %>
+      </div>
+      <div>
+        <%= label_tag "lottery[contests_attributes][#{contests_form.index}][prizes_attributes][#{prizes_fields.index}][meta_data][test2][test2a]", 'Test2a' %>
+        <%= text_field_tag "lottery[contests_attributes][#{contests_form.index}][prizes_attributes][#{prizes_fields.index}][meta_data][test2][test2a]", prizes_fields.object.meta_data['test2']['test2a'] %>
+      </div>
+    <% end %>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
