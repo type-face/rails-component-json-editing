@@ -69,6 +69,6 @@ class LotteriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lottery_params
-      params.require(:lottery).permit(:name, contests_attributes: [:id, :name, { prizes_attributes: [:id, :name, { meta_data: [:test1, { test2: :test2a }] }]}])
+      params.require(:lottery).permit(:name, contests_attributes: [:id, :name, { prizes_attributes: [:id, :name, :image, { meta_data: [:test1, { test2: :test2a }] }]}])
     end
 end

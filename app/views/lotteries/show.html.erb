@@ -1,4 +1,20 @@
 <p id="notice"><%= notice %></p>
 
+<div>
+	<%= @lottery.name %>
+</div>
+<% @lottery.contests.each do |contest| %>
+	<div>
+		<%= contest.name %>
+	</div>
+	<%= contest.prizes.each do |prize| %>
+		<div>
+			<%= prize.name %>
+		</div>
+		<div>
+			<%= image_tag prize.image %>
+		</div>
+	<% end %>
+<% end %>
 <%= link_to 'Edit', edit_lottery_path(@lottery) %> |
 <%= link_to 'Back', lotteries_path %>
