@@ -1,5 +1,5 @@
 {
-  "name": "modern-rails-frontend",
+  "name": "soasher-prototype",
   "private": true,
   "dependencies": {
     "@rails/webpacker": "3.5",
