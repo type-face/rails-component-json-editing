@@ -4,8 +4,12 @@
   "dependencies": {
     "@rails/webpacker": "3.5",
     "actioncable": "^5.2.0",
+    "babel-preset-react": "^6.24.1",
     "normalize.css": "^7.0.0",
-    "postcss-nested": "^3.0.0"
+    "postcss-nested": "^3.0.0",
+    "prop-types": "^15.6.2",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
   },
   "scripts": {
     "lint-staged": "$(yarn bin)/lint-staged"
