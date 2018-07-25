@@ -7,13 +7,18 @@
 	<div>
 		<%= contest.name %>
 	</div>
-	<%= contest.prizes.each do |prize| %>
+	<% contest.prizes.each do |prize| %>
 		<div>
 			<%= prize.name %>
 		</div>
 		<div>
-			<%= image_tag prize.image %>
+			<%= prize.meta_data['test1'] %>
 		</div>
+		<% prize.images.each do |image| %>
+			<div>
+				<%= image_tag image %>
+			</div>
+		<% end %>
 	<% end %>
 <% end %>
 <%= link_to 'Edit', edit_lottery_path(@lottery) %> |

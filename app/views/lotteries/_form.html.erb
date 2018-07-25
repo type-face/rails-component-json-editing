@@ -24,22 +24,23 @@
       <%= contests_form.text_field :name %>
     </div>
     <%= contests_form.fields_for :prizes do |prize_field| %>
+      <% prize_meta_data = "lottery[contests_attributes][#{contests_form.index}][prizes_attributes][#{prize_field.index}][meta_data]"%>
       <h4>Prizes</h4>
       <div>
         <%= prize_field.label :name %>
         <%= prize_field.text_field :name %>
       </div>
       <div>
-        <%= label_tag "lottery[contests_attributes][#{contests_form.index}][prizes_attributes][#{prize_field.index}][meta_data][test1]", 'Test1' %>
-        <%= text_field_tag "lottery[contests_attributes][#{contests_form.index}][prizes_attributes][#{prize_field.index}][meta_data][test1]", prize_field.object.meta_data['test1'] %>
+        <%= label_tag "#{prize_meta_data}[test1]", 'Test1' %>
+        <%= text_field_tag "#{prize_meta_data}[test1]", prize_field.object.meta_data['test1'] %>
       </div>
       <div>
-        <%= label_tag "lottery[contests_attributes][#{contests_form.index}][prizes_attributes][#{prize_field.index}][meta_data][test2][test2a]", 'Test2a' %>
-        <%= text_field_tag "lottery[contests_attributes][#{contests_form.index}][prizes_attributes][#{prize_field.index}][meta_data][test2][test2a]", prize_field.object.meta_data['test2']['test2a'] %>
+        <%= label_tag "#{prize_meta_data}[test2][test2a]", 'Test2a' %>
+        <%= text_field_tag "#{prize_meta_data}[test2][test2a]", prize_field.object.meta_data['test2']['test2a'] %>
       </div>
       <div>
-        <%= prize_field.label :image %>
-        <%= prize_field.file_field :image %>
+        <%= prize_field.label :images %>
+        <%= prize_field.file_field :images, multiple: true %>
       </div>
     <% end %>
   <% end %>
