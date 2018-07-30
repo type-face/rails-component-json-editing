@@ -2,6 +2,7 @@
   "name": "soasher-prototype",
   "private": true,
   "dependencies": {
+    "@json-editor/json-editor": "^1.1.0-beta.4",
     "@rails/webpacker": "3.5",
     "actioncable": "^5.2.0",
     "babel-preset-react": "^6.24.1",

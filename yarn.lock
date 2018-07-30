@@ -78,6 +78,10 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
+"@json-editor/json-editor@^1.1.0-beta.4":
+  version "1.1.0-beta.4"
+  resolved "https://registry.yarnpkg.com/@json-editor/json-editor/-/json-editor-1.1.0-beta.4.tgz#6129ece68b124919f70c13bf4746de2ed1e08c2d"
+
 "@rails/webpacker@3.5":
   version "3.5.5"
   resolved "https://registry.yarnpkg.com/@rails/webpacker/-/webpacker-3.5.5.tgz#8911c66bcefc8bc6b91270e92f0d39e3c2d43116"
