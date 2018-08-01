@@ -30,6 +30,7 @@
         <%= prize_field.label :name %>
         <%= prize_field.text_field :name %>
       </div>
+<!-- EDIT JSONB FIELD USING STANDARD RAILS FORM TAGS
       <div>
         <%= label_tag "#{prize_meta_data}[test1]", 'Test1' %>
         <%= text_field_tag "#{prize_meta_data}[test1]", prize_field.object.meta_data['test1'] %>
@@ -38,12 +39,18 @@
         <%= label_tag "#{prize_meta_data}[test2][test2a]", 'Test2a' %>
         <%= text_field_tag "#{prize_meta_data}[test2][test2a]", prize_field.object.meta_data['test2']['test2a'] %>
       </div>
-      <div>
+ -->      <div>
         <%= prize_field.label :images %>
         <%= prize_field.file_field :images, multiple: true %>
       </div>
+      <div>
+        <!-- EDIT JSONB FIELD USING JSON-EDITOR GEM -->
+        <%= c("json-form", { root: "#{prize_meta_data}", meta_data: prize_field.object.meta_data }) %>
+      </div>
     <% end %>
   <% end %>
+
+
 
   <div class="actions">
     <%= f.submit %>

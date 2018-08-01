@@ -8,4 +8,5 @@
 // layout file, like app/views/layouts/application.html.erb
 
 import "init";
+import "components/json-form/json-form";
 import "./application.css";

@@ -12,13 +12,11 @@
 			<%= prize.name %>
 		</div>
 		<div>
-			<%= prize.meta_data['test1'] %>
+			<%= "Test1: #{prize.meta_data['test1']}"%>
 		</div>
-		<% prize.images.each do |image| %>
-			<div>
-				<%= image_tag image %>
-			</div>
-		<% end %>
+		<div>
+			<%= "Test2a: #{prize.meta_data['test2']['test2a'] }"%>
+		</div>
 	<% end %>
 <% end %>
 <%= link_to 'Edit', edit_lottery_path(@lottery) %> |
