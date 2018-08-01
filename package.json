@@ -1,5 +1,5 @@
 {
-  "name": "soasher-prototype",
+  "name": "component-prototype",
   "private": true,
   "dependencies": {
     "@json-editor/json-editor": "^1.1.0-beta.4",
